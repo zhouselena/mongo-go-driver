@@ -31,13 +31,11 @@ func main() {
 	defer fRead.Close()
 
 	// open file to write
-	fWrite, err := os.Create(parsePerfCompDir + perfReportFileMd)
+	fWrite, err := os.Create(perfReportFileMd)
 	if err != nil {
 		log.Fatalf("Could not create %s: %v", perfReportFileMd, err)
 	}
 	defer fWrite.Close()
-
-	fmt.Fprintf(fWrite, "## 👋GoDriver Performance\n")
 
 	// read the file line by line using scanner
 	scanner := bufio.NewScanner(fRead)
