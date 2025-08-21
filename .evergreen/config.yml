@@ -273,6 +273,7 @@ functions:
           VERSION_ID: ${version_id}
           BASE_SHA: "${revision}"
           HEAD_SHA: "${github_commit}"
+          PR_NUMBER: "${github_pr_number}"
         include_expansions_in_env: [PERF_URI_PRIVATE_ENDPOINT]
         args: [*task-runner, perf-pr-comment]
 
